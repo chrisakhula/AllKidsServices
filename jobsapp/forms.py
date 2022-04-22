@@ -9,6 +9,8 @@ class CreateJobForm(forms.ModelForm):
         exclude = ('user', 'created_at',)
 
     def is_valid(self):
+        self.object = self.get_object()
+        form = self.get_form()
         valid = super(CreateJobForm, self).is_valid()
 
         # if already valid, then return True

@@ -88,9 +88,9 @@ class EmployerRegistrationForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super(EmployerRegistrationForm, self).__init__(*args, **kwargs)
-        self.fields['username'].label = "Company Name"
-        self.fields['first_name'].label = "Company Name"
-        self.fields['last_name'].label = "Company Address"
+        self.fields['username'].label = "Username"
+        self.fields['first_name'].label = "Full name"
+        self.fields['last_name'].label = "Personal  Address"
         self.fields['password1'].label = "Password"
         self.fields['password2'].label = "Confirm Password"
 
@@ -101,7 +101,8 @@ class EmployerRegistrationForm(UserCreationForm):
         )
         self.fields['first_name'].widget.attrs.update(
             {
-                'placeholder': 'Enter Company Name',
+                'placeholder': 'Enter Full name',
+                
             }
         )
         self.fields['last_name'].widget.attrs.update(
